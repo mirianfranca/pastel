@@ -1,0 +1,14 @@
+{
+  "name": "Pastel",
+  "version": "0.0.1",
+  "description": "Não é um pastel de verdade",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:calistro/pastel.git"
+  },
+  "dependencies": {}
+}
