@@ -10,5 +10,9 @@
     "type": "git",
     "url": "git@github.com:calistro/pastel.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  }
 }
