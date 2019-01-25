@@ -1,15 +1,20 @@
- 
- const http = require('http')
+var express = require('express')
 
- const hostname = '127.0.0.1'
- const port = 3000
+app = express()
 
- const server = http.createServer(function (req, res) {
-     res.statusCode = 200
-     res.setHeader('Content-Type', 'text/plain')
-     res.end('Hello')
- })
+port = process.env.PORT || 3000
 
- server.listen(port, hostname, function() {
-     console.log('Server running')
- })
+mongoose = require('mongoose')
+
+User = require('./api/models/user')
+
+bodyParser = require('body-parser')
+
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/msgdb')
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ type: 'application/*+json' }))
+var routes = require('./api/routes/userRoute')
+routes(app)
+app.listen(port)
+console.log('PASTEL2')
