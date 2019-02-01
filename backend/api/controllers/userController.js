@@ -1,6 +1,6 @@
 'use strict'
 
-var mongoose = require('mongoose')
+let mongoose = require('mongoose')
 
 User = mongoose.model('User')
 
@@ -12,12 +12,9 @@ exports.all = function(req, res) {
 }
 
 exports.create = function(req, res) {
-    var newUser = new User()
-    newUser.name = req.body.name
-    newUser.username = req.body.username
-    newUser.password = req.body.password
-    newUser.save(function(err, msg) {
+    let newUser = new User(req.body)
+    newUser.save(function(err, user) {
         if(err) res.send(err)
-        res.json(msg)
+        else res.json({message: "User successfully added", user})
     })
 }
