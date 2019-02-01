@@ -14,6 +14,13 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "google-auth-library": "^3.0.1",
+    "googleapis": "^36.0.0",
     "mongoose": "^5.4.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^5.2.0"
   }
 }
