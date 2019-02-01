@@ -4,8 +4,9 @@
   "description": "Não é um pastel de verdade",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "debug": "nodemon --inspect server.js"
+    "start": "SET NODE_ENV=dev && node server.js",
+    "debug": "nodemon --inspect server.js",
+    "test": "mocha --timeout 10000"
   },
   "repository": {
     "type": "git",

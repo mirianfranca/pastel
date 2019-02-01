@@ -18,3 +18,6 @@ var routes = require('./api/routes/userRoute')
 routes(app)
 app.listen(port)
 console.log('PASTEL2')
+
+
+module.exports = app
