@@ -1,14 +1,12 @@
-'use strict'
+import * as UC from '../controllers/userController'
 
-module.exports = function(app) {
+export default function routes(app) {
     
-    var users = require('../controllers/userController')
-
     app.route('/users')
-        .get(users.all)
-        .post(users.create)
+        .get(UC.all)
+        .post(UC.create)
 
     app.route('/users/:id')
-        .get(users.get)
+        .get(UC.get)
 
 }

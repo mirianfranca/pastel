@@ -1,23 +1,17 @@
-var express = require('express')
+import express from 'express'
+import mongoose from'mongoose'
+import { User } from './api/models/user'
+import bodyParser from 'body-parser'
+import routes from './api/routes/userRoute'
 
-app = express()
+export const app = express()
 
-port = process.env.PORT || 3000
-
-mongoose = require('mongoose')
-
-User = require('./api/models/user')
-
-bodyParser = require('body-parser')
+const port = process.env.PORT || 3000
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/msgdb')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ type: 'application/json' }))
-var routes = require('./api/routes/userRoute')
 routes(app)
 app.listen(port)
 console.log('PASTEL2')
-
-
-module.exports = app

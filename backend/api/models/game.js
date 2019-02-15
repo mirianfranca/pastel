@@ -1,13 +1,11 @@
-'use strict'
+import mongoose from'mongoose'
 
-var mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-var Schema = mongoose.Schema
-
-var gameSchema = new Schema({
+const gameSchema = new Schema({
     name: { type: String },
     category:{type: String},
     id:{type: Number}
 })
 
-module.exports = mongoose.model('Game', userSchema)
+export default mongoose.model('Game', userSchema)

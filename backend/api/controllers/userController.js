@@ -1,17 +1,15 @@
-'use strict'
+import mongoose from 'mongoose'
 
-let mongoose = require('mongoose')
+const User = mongoose.model('User')
 
-User = mongoose.model('User')
-
-exports.all = function(req, res) {
+const all = (req, res) => {
     User.find({}, function(err, msg) {
         if(err) res.send(err)
         res.json(msg) 
     })
 }
 
-exports.create = function(req, res) {
+const create = (req, res) => {
     let newUser = new User(req.body)
     newUser.save(function(err, user) {
         if(err) res.send(err)
@@ -19,9 +17,11 @@ exports.create = function(req, res) {
     })
 }
 
-exports.get = function(req, res) {
+const get = (req, res) => {
     User.findById(req.params.id, (err, user) => {
         if (err) res.send(err)
         else res.json(user)
     })
 }
+
+export {all, create, get}

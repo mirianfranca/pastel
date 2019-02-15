@@ -1,12 +1,10 @@
-process.env.NODE_ENV = 'test'
+import mongoose from 'mongoose'
+import chai from 'chai'
+import chaiHttp from 'chai-http'
+import { app } from '../server'
+import User from '../api/models/user'
 
-let mongoose = require('mongoose')
-let chai = require('chai')
-let chaiHttp = require('chai-http')
-let app = require('../server')
-let should = chai.should()
-
-let User = require('../api/models/user')
+const should = chai.should()
 
 chai.use(chaiHttp)
 

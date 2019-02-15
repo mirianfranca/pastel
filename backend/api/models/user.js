@@ -1,12 +1,12 @@
-'use strict'
+import mongoose from 'mongoose'
 
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
-var userSchema = new Schema({
+const Schema = mongoose.Schema
+
+const userSchema = new Schema({
     name: { type: String, required: true },
     username: { type: String, required: true },
     password: { type: String, required: true },
     dt_created: { type: Date, default: Date.now }
 })
 
-module.exports = mongoose.model('User', userSchema)
+export default mongoose.model('User', userSchema)
