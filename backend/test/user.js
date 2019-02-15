@@ -30,6 +30,25 @@ describe('User', () => {
         })
     })
 
+    describe('/GET:id User', () => {
+        it('Should get a user by the given id', done => {
+            let user = new User({name: "Test", username: "username", password: "123qwe"})
+            user.save((err, user) => {
+                chai.request(app)
+                    .get('/users/' + user.id)
+                    .send(user)
+                    .end((err, res) => {
+                        res.should.have.status(200)
+                        res.body.should.be.a('object')
+                        res.body.should.have.property('name').eql('Test')
+                        res.body.should.have.property('username').eql('username')
+                        res.body.should.have.property('password').eql('123qwe')
+                        done()
+                })
+            })
+        })
+    })
+
     describe('/POST User', () => {
         it('Should not post a empty user', done => {
             let user = {}

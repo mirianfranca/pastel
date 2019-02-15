@@ -8,9 +8,7 @@ module.exports = function(app) {
         .get(users.all)
         .post(users.create)
 
-    // app.route('/users/:id')
-    //     .get(users.get)
-    //     .put(users.update)
-    //     .delete(users.delete)
+    app.route('/users/:id')
+        .get(users.get)
 
 }
