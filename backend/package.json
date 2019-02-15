@@ -15,8 +15,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
     "google-auth-library": "^3.0.1",
     "googleapis": "^36.0.0",
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4",
     "mongoose": "^5.4.6"
   },
   "devDependencies": {
