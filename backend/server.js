@@ -4,7 +4,7 @@ import { User } from './api/models/user'
 import bodyParser from 'body-parser'
 import routes from './api/routes/userRoute'
 import graphlHTTP from 'express-graphql'
-import schema from './schema'
+import schema from './api/schemas/userSchema'
 
 export const app = express()
 
