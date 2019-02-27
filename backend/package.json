@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "babel-node server.js",
-    "debug": "nodemon --exec babel-node server.js --debug",
+    "debug": "nodemon --exec babel-node server.js --inspect",
     "test": "./node_modules/.bin/mocha --compilers js:@babel/register"
   },
   "repository": {
@@ -13,6 +13,7 @@
     "url": "git@github.com:calistro/pastel.git"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-graphql": "^0.7.1",
