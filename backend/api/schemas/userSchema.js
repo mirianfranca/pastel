@@ -1,5 +1,5 @@
 import { makeExecutableSchema } from 'graphql-tools'
-import { resolvers } from './api/resolvers/userResolver'
+import { resolvers } from '../resolvers/userResolver'
 
 const typeDefs = `
     type User {
@@ -17,6 +17,7 @@ const typeDefs = `
 
     type Query {
         all: [User]
+        find(username: String!): User
         allGames:[Game]
     }
 `
