@@ -9,8 +9,15 @@ const typeDefs = `
         password: String!
     }
 
+    type Game {
+        _id: ID!
+        name: String!
+        category: String!
+    }
+
     type Query {
         all: [User]
+        allGames:[Game]
     }
 `
 

@@ -1,8 +1,8 @@
 import express from 'express'
 import mongoose from'mongoose'
-import { User } from './api/models/user'
 import bodyParser from 'body-parser'
 import routes from './api/routes/userRoute'
+import gameRoute from './api/routes/gameRoutes'
 import graphlHTTP from 'express-graphql'
 import schema from './schema'
 
