@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 
-class TelaInicialPage extends StatefulWidget {
+class TelaPerfilPage extends StatefulWidget {
   @override
-  _TelaInicialPageState createState() => new _TelaInicialPageState();
+  _TelaPerfilPageState createState() => new _TelaPerfilPageState();
 }
 
-class _TelaInicialPageState extends State<TelaInicialPage> {
+class _TelaPerfilPageState extends State<TelaPerfilPage> {
   @override
   Widget build (BuildContext context){
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Tela Inicial'),
+        title: new Text('Perfil'),
       ),
       body: Center(
         child: Column(
           children: <Widget>[
             Text(
-              'Tela Inicial',
+              'Perfil',
             ),
           ],
         ),
