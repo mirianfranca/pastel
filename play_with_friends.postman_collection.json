@@ -1,0 +1,63 @@
+{
+	"id": "4a3a878f-b79e-471b-b320-ae26790f1c57",
+	"name": "play_with_friends",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"439ab1b3-99e0-4da0-a32f-54fef9539931",
+		"e78675b2-a409-4224-bcf9-d66350b2ba39"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "439ab1b3-99e0-4da0-a32f-54fef9539931",
+			"name": "01. Createuser",
+			"url": "http://localhost:3000/users",
+			"description": "cria um usuário",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\tname:\"yuri\"\n\tusername:\"teste\"\n\tpassword:\"123qwe\"\n}",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e78675b2-a409-4224-bcf9-d66350b2ba39",
+			"name": "02.Create Game",
+			"url": "http://localhost:3000/games",
+			"description": "cria um usuário",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"name\":\"Path of Exile\",\n\t\"category\":\"Action RPG\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}
