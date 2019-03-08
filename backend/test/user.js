@@ -1,12 +1,10 @@
-process.env.NODE_ENV = 'test'
+import mongoose from 'mongoose'
+import chai from 'chai'
+import chaiHttp from 'chai-http'
+import { app } from '../server'
+import User from '../api/models/user'
 
-let mongoose = require('mongoose')
-let chai = require('chai')
-let chaiHttp = require('chai-http')
-let app = require('../server')
-let should = chai.should()
-
-let User = require('../api/models/user')
+const should = chai.should()
 
 chai.use(chaiHttp)
 
@@ -27,6 +25,25 @@ describe('User', () => {
                     res.body.length.should.be.eql(0)
                     done()
                 })
+        })
+    })
+
+    describe('/GET:id User', () => {
+        it('Should get a user by the given id', done => {
+            let user = new User({name: "Test", username: "username", password: "123qwe"})
+            user.save((err, user) => {
+                chai.request(app)
+                    .get('/users/' + user.id)
+                    .send(user)
+                    .end((err, res) => {
+                        res.should.have.status(200)
+                        res.body.should.be.a('object')
+                        res.body.should.have.property('name').eql('Test')
+                        res.body.should.have.property('username').eql('username')
+                        res.body.should.have.property('password').eql('123qwe')
+                        done()
+                })
+            })
         })
     })
 

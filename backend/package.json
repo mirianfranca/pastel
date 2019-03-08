@@ -4,24 +4,36 @@
   "description": "Não é um pastel de verdade",
   "main": "server.js",
   "scripts": {
-    "start": "SET NODE_ENV=dev && node server.js",
-    "debug": "nodemon --inspect server.js",
-    "test": "mocha --timeout 10000"
+    "start": "babel-node server.js",
+    "debug": "nodemon --exec babel-node server.js --inspect",
+    "test": "./node_modules/.bin/mocha --compilers js:@babel/register"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:calistro/pastel.git"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
     "google-auth-library": "^3.0.1",
     "googleapis": "^36.0.0",
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4",
     "mongoose": "^5.4.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
   }
 }

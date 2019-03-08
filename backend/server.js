@@ -1,23 +1,24 @@
-var express = require('express')
+import express from 'express'
+import mongoose from'mongoose'
+import bodyParser from 'body-parser'
+import routes from './api/routes/userRoute'
+import gameRoute from './api/routes/gameRoutes'
+import graphlHTTP from 'express-graphql'
+import schema from './api/schemas/userSchema'
 
-app = express()
+export const app = express()
 
-port = process.env.PORT || 3000
-
-mongoose = require('mongoose')
-
-User = require('./api/models/user')
-
-bodyParser = require('body-parser')
+const port = process.env.PORT || 3000
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/msgdb')
+app.use('/graphql', graphlHTTP({
+    schema: schema,
+    graphiql: true
+}))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ type: 'application/json' }))
-var routes = require('./api/routes/userRoute')
 routes(app)
+gameRoute(app)
 app.listen(port)
 console.log('PASTEL2')
-
-
-module.exports = app
